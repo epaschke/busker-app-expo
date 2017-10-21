@@ -43,3 +43,26 @@ export class ViewBuskersHorizontal extends React.Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+  container: {
+  flex: 1,
+  backgroundColor: '#fff'
+},
+headingText: {
+  textAlign: 'center',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginTop: 10,
+  marginBottom: 0,
+  fontWeight: 'bold',
+  fontSize: 20
+},
+image: {
+  width: 150,
+  height: 150,
+  marginLeft: 15,
+  marginTop: 20,
+  borderRadius: 5
+}
+});

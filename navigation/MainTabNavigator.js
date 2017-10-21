@@ -5,6 +5,7 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 
 import HomeScreen from '../screens/Home';
 import MapScreen from '../screens/MapScreen';
+import PickPaymentScreen from '../screens/PickPaymentScreen';
 
 export default TabNavigator(
   {
@@ -14,6 +15,9 @@ export default TabNavigator(
     Explore: {
       screen: MapScreen,
     },
+    Support: {
+      screen: PickPaymentScreen,
+    }
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -26,6 +30,9 @@ export default TabNavigator(
             break;
           case 'Explore':
             iconName = 'map';
+            break;
+          case 'Support':
+            iconName = 'dollar-bill';
             break;
           default:
             iconName = 'link';

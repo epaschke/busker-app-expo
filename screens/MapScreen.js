@@ -27,20 +27,10 @@ export default class MapScreen extends React.Component {
         };
     };
 
-    static navigationOptions = ({ navigation }) => ({
-        headerTitle: 'FIND A PERFORMER',
-        headerStyle: {
-            backgroundColor: '#5e7879',
-            shadowOpacity: 0
-            },
-        headerTitleStyle: {
-            color: '#fedaa7',
-            fontSize: 30,
-            fontWeight: 'bold',
-            alignSelf: 'center',
-            },
-        headerRight: <PayButton />
-  })
+    static navigationOptions = {
+        header: null
+    };
+
 
    userModal(person) {
        this.setState({
@@ -75,9 +65,8 @@ export default class MapScreen extends React.Component {
               <Modal style={{
               backgroundColor: '#fff',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'space-around',
               height: 300,
-              alignContent: 'space-around'
           }} isOpen={this.state.isOpen} onClosed={() => this.setState({isOpen: false})} position={"center"}>
                   <Text style={{fontWeight: 'bold'}}>{this.state.currentUser.name}</Text>
                   <View style={{justifyContent: 'space-around', alignContent: 'space-around'}}>

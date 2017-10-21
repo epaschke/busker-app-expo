@@ -10,14 +10,11 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { PayButton } from '../components/PayButton';
-import { ViewBuskersHorizontal } from '../components/PayButton';
+import { ViewBuskersHorizontal } from '../components/ViewBuskersHorizontal';
 
 export default class Home extends React.Component {
     static navigationOptions = {
-        headerStyle: {
-            backgroundColor: 'transparent',
-            },
-        headerRight: <PayButton />
+        header: null
     };
 
     render(){
@@ -29,6 +26,7 @@ export default class Home extends React.Component {
                 <Text style={styles.headingText}>Nearby</Text>
                 <ViewBuskersHorizontal />
                 <Text style={styles.headingText}>Featured</Text>
+                <ViewBuskersHorizontal />
               </ScrollView>
             </View>
         )
