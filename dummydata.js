@@ -9,7 +9,7 @@ const Buskers = [{
   history: [{from: 'Kansas A.', amount: 2}, {from: 'Anna B.', amount: 4}],
 },
 {
-  photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",
+  photo: "https://i.ytimg.com/vi/2ju7OawL7VU/maxresdefault.jpg",
   name: "Laura Hale",
   handle: "@LHaleMusicBB<3",
   bio: "Classically trained violinist with indie flair and a hipster attitude. NOT LINDSAY STERLING.",
@@ -39,7 +39,7 @@ const Buskers = [{
   history: [{from: 'Sandy M.', amount: 15}, {from: 'Claire T.', amount: 10}, {from: 'Jeff', amount: 4}],
 },
 {
-  photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",
+  photo: "http://www.crossfithighvoltage.com/wp-content/uploads/2015/08/FireBreather.jpg",
   name: "Eri Harland",
   handle: "@HarlandBreathesFire",
   bio: "Those two years shipwrecked on that remote Polynesian island were #Worth #It.",

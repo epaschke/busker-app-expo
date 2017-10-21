@@ -48,10 +48,10 @@ export default class Home extends React.Component {
                 <Text style={styles.headingText}>FEATURED</Text>
                 <ScrollView horizontal={true} decelerationRate={0} snapToInterval={200}
                 snapToAlignment={"center"}>
-                {Buskers.filter((busker) => busker.photo !== "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png").map((busker, id) =>
+                {Buskers.filter((busker, id) => id > 4).map((busker, id) =>
                   <TouchableOpacity key={id + 'featured'} style={{justifyContent: 'center', flex: 1}} onPress={() => this.props.navigation.navigate('Profile1', {user: busker})}>
                   <Image style={styles.image}
-                  source={{uri: busker.photo}} />
+                  source={{uri: busker.photo}}  />
                   <Text style={{textAlign: 'center', fontSize: 12}}>{busker.handle}</Text>
                   <Text style={{textAlign: 'center', fontSize: 12}}>{busker.act}</Text>
                 </TouchableOpacity>)}
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
   backgroundColor: '#fff'
 },
 headingText: {
-  marginLeft: 10,
   justifyContent: 'center',
+  textAlign: 'center',
   marginTop: 10,
   marginBottom: 0,
   fontWeight: 'bold',

@@ -37,7 +37,7 @@ class ProfileHeader extends React.Component {
           return (
             <View style={styles.header}>
               <View style={styles.profilepicWrap}>
-                <Image style={styles.profilepic} source={{uri: this.props.person.photo}} />
+            <Image style={styles.profilepic} source={{uri: this.props.person.photo}} />
               </View>
               <Text style={styles.name}>{this.props.person.name}  <Foundation
                   name="record"
