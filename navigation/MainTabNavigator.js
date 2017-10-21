@@ -6,6 +6,7 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 import HomeScreen from '../screens/Home';
 import MapScreen from '../screens/MapScreen';
 import PickPaymentScreen from '../screens/PickPaymentScreen';
+import ArtistProfile from '../screens/ArtistProfile';
 
 export default TabNavigator(
   {
@@ -17,6 +18,9 @@ export default TabNavigator(
     },
     Support: {
       screen: PickPaymentScreen,
+    },
+    Profile: {
+        screen: ArtistProfile,
     }
   },
   {
