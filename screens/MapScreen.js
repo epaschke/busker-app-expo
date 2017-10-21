@@ -6,17 +6,21 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
+  TouchableHighlight,
   View,
+  Dimensions
 } from 'react-native';
 import { WebBrowser, Location, Permissions, MapView } from 'expo';
 import { PayButton } from '../components/PayButton'
 import Modal from 'react-native-modalbox';
 
+var width = Dimensions.get('window').width;
+var height = Dimensions.get('window').height;
 
-const dummyData = [{name: 'John Smith', act: 'guitar', latitude: 37.779947, longitude: -122.403006,},
-                   {name: 'Person X', act: 'painting', latitude: 37.777441, longitude: -122.409919,},
-                   {name: 'H. T.', act: 'violin', latitude: 37.783968, longitude: -122.414228,}]
+
+const dummyData = [{name: 'John Smith', act: 'guitar', latitude: 37.779947, longitude: -122.403006, img: require('../img/moon.jpg')},
+                   {name: 'Person X', act: 'painting', latitude: 37.777441, longitude: -122.409919, img: require('../img/moon.jpg')},
+                   {name: 'H. T.', act: 'violin', latitude: 37.783968, longitude: -122.414228, img: require('../img/moon.jpg')}]
 
 export default class MapScreen extends React.Component {
     constructor() {
@@ -66,12 +70,13 @@ export default class MapScreen extends React.Component {
               backgroundColor: '#fff',
               alignItems: 'center',
               justifyContent: 'space-around',
-              height: 300,
+              height: height * .6,
+              width: width * .8
           }} isOpen={this.state.isOpen} onClosed={() => this.setState({isOpen: false})} position={"center"}>
                   <Text style={{fontWeight: 'bold'}}>{this.state.currentUser.name}</Text>
+                  <Image style={{height: height * .2, width: width * .6}} source={this.state.currentUser.img}/>
                   <View style={{justifyContent: 'space-around', alignContent: 'space-around'}}>
-                      <Button title="See full profile" />
-                      <Button title="Support User" />
+                      <Button title="See full profile" onPress={() => this.props.navigation.navigate('Profile1')}/>
                   </View>
                   <Button onPress={() => this.setState({isOpen: false})} title="X">X</Button>
               </Modal>

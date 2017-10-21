@@ -10,10 +10,10 @@ import {
   Button
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import MainTabNavigator from '../navigation/MainTabNavigator';
 
 export default class PerformerProfile extends React.Component {
     static navigationOptions = {
-    header: null
   };
 
       render(){
@@ -68,7 +68,7 @@ class ProfileHeader extends React.Component {
       flex: 1,
       width: null,
       alignSelf: 'stretch',
-      borderRadius: 100,
+      borderRadius: 150,
       borderColor: '#FED9A7',
       borderWidth: 4
     },
