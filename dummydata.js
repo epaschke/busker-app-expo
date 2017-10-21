@@ -29,7 +29,7 @@ const Buskers = [{
   history: [],
 },
 {
-  photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",
+  photo: "http://www.stoyanart.com/Miami%20caricaturist.jpg",
   name: "Vincent Dillario",
   handle: "@VincentD",
   bio: "My fine arts degree has served me fine, thank you.",
@@ -49,7 +49,7 @@ const Buskers = [{
   history: []
 },
 {
-  photo: "https://cdn.pixabay.com/photo/2017/03/08/03/25/magician-2125840_960_720.jpg",
+  photo: "http://theplaidzebra.com/wp-content/uploads/2014/10/Life-of-a-Street-Magician_Plaid-Zebra.jpg",
   name: "'Magestic' Mike",
   handle: "@MagicMichael",
   bio: "My name is Michael and I do magic. Fuck me, right?",
@@ -69,7 +69,7 @@ const Buskers = [{
   history: []
 },
 {
-  photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",
+  photo: "https://i.ytimg.com/vi/VLdG2ZwZiQw/hqdefault.jpg",
   name: "Corey K.",
   handle: "@CK",
   bio: "Moved from a small town in Missouri with nothing but my sticks, found my soul in these paint cans.",
@@ -89,7 +89,7 @@ const Buskers = [{
   history: []
 },
 {
-  photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",
+  photo: "http://www.scarlettentertainment.com/sites/default/files/Male-Contortionist-live-performance.jpg",
   name: "500: Internal Server Error",
   handle: "@l33thaxx0r",
   bio: "Watch me hack your private accounts in just minutes. Will shock, amaze, and also definitely not sell your data on the black market.",
@@ -99,7 +99,7 @@ const Buskers = [{
   history: []
 },
 {
-  photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",
+  photo: "http://ak1.picdn.net/shutterstock/videos/7469011/thumb/7.jpg",
   name: "Kelly",
   handle: "@KellyCries",
   bio: "I can cry on command, and apparently that's pretty special.",
