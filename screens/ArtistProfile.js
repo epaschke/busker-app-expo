@@ -11,13 +11,14 @@ import {
   Dimensions
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import MainTabNavigator from '../navigation/MainTabNavigator';
+import { Buskers } from '../dummydata';
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
 export default class PerformerProfile extends React.Component {
     static navigationOptions = {
-    header: null
   };
 
       render(){
@@ -105,7 +106,7 @@ class FollowButton extends React.Component {
       flex: 1,
       width: null,
       alignSelf: 'stretch',
-      borderRadius: 100,
+      borderRadius: 150,
       borderColor: '#FED9A7',
       borderWidth: 4
     },

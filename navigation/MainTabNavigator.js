@@ -15,13 +15,13 @@ export default TabNavigator(
     },
     Explore: {
       screen: MapScreen,
+  },
+    Profile: {
+        screen: ArtistProfile,
     },
     Support: {
       screen: PickPaymentScreen,
     },
-    Profile: {
-        screen: ArtistProfile,
-    }
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -46,7 +46,7 @@ export default TabNavigator(
             name={iconName}
             size={28}
             style={{ marginBottom: -3 }}
-            color={focused ? 'darkgray': 'lightgray'}
+            color={focused ? 'darkgray': routeName === 'Support' ? 'green' : 'lightgray'}
           />
         );
       },

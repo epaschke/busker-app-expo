@@ -1,22 +1,27 @@
 import React from 'react';
 import {
-  Button,
   Image,
   Platform,
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
+  TouchableHighlight,
   View,
+  Dimensions
 } from 'react-native';
+import { Button } from 'react-native-elements';
 import { WebBrowser, Location, Permissions, MapView } from 'expo';
 import { PayButton } from '../components/PayButton'
 import Modal from 'react-native-modalbox';
+import { Buskers } from '../dummydata';
+
+var width = Dimensions.get('window').width;
+var height = Dimensions.get('window').height;
 
 
-const dummyData = [{name: 'John Smith', act: 'guitar', latitude: 37.779947, longitude: -122.403006,},
-                   {name: 'Person X', act: 'painting', latitude: 37.777441, longitude: -122.409919,},
-                   {name: 'H. T.', act: 'violin', latitude: 37.783968, longitude: -122.414228,}]
+// const dummyData = [{name: 'John Smith', act: 'guitar', latitude: 37.779947, longitude: -122.403006, img: require('../img/moon.jpg')},
+//                    {name: 'Person X', act: 'painting', latitude: 37.777441, longitude: -122.409919, img: require('../img/moon.jpg')},
+//                    {name: 'H. T.', act: 'violin', latitude: 37.783968, longitude: -122.414228, img: require('../img/moon.jpg')}]
 
 export default class MapScreen extends React.Component {
     constructor() {
@@ -50,30 +55,38 @@ export default class MapScreen extends React.Component {
                   latitudeDelta: 0.05,
                   longitudeDelta: 0.05
               }}>
-              {dummyData.map((person, id) => (
-                  <MapView.Marker key={id}
+              {Buskers.map((person, id) => {
+                  if (person.active)
+                  return (
+                    <MapView.Marker key={id}
                     coordinate={{
-                        latitude: person.latitude,
-                        longitude: person.longitude,
+                        latitude: person.active.latitude,
+                        longitude: person.active.longitude,
                     }}>
-                    <MapView.Callout onPress={() => this.userModal(person)}>
+                    <MapView.Callout onPress={() => this.userModal(person)} style={{justifyContent: 'center', alignItems: 'center', padding: 5}}>
+                      <Image style={{height: 50, width: 50}} source={{uri: person.photo}}/>
                       <Text style={{fontWeight: 'bold', fontSize: 20}}>{person.name}</Text>
                       <Text style={{fontStyle: 'italic'}}>{person.act}</Text>
                     </MapView.Callout>
-                  </MapView.Marker>))}
+                </MapView.Marker>)})}
               </MapView>
               <Modal style={{
               backgroundColor: '#fff',
+              borderColor: 'gray',
+              borderWidth: 1,
+              borderRadius: 20,
               alignItems: 'center',
               justifyContent: 'space-around',
-              height: 300,
+              height: height * .6,
+              width: width * .8
           }} isOpen={this.state.isOpen} onClosed={() => this.setState({isOpen: false})} position={"center"}>
-                  <Text style={{fontWeight: 'bold'}}>{this.state.currentUser.name}</Text>
+                  <Text style={{fontWeight: 'bold', fontSize: 25}}>{this.state.currentUser.name}</Text>
+                  <Text>{this.state.currentUser.act}</Text>
+                  <Image style={{height: height * .2, width: width * .4}} source={{uri: this.state.currentUser.photo}}/>
                   <View style={{justifyContent: 'space-around', alignContent: 'space-around'}}>
-                      <Button title="See full profile" />
-                      <Button title="Support User" />
+                      <Button large raised title="See full profile" backgroundColor="#aaac96" borderRadius={10} onPress={() => this.props.navigation.navigate('Profile1')}/>
                   </View>
-                  <Button onPress={() => this.setState({isOpen: false})} title="X">X</Button>
+                  <Button onPress={() => this.setState({isOpen: false})} backgroundColor="#aaac96" title="X" />
               </Modal>
             </View>
         )
