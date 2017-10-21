@@ -1,14 +1,18 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 
-import LoginScreen from '../screens/LoginScreen';
+import HomeScreen from '../screens/Home';
+import MapScreen from '../screens/MapScreen';
 
 export default TabNavigator(
   {
-    Login: {
-      screen: LoginScreen,
+    Home: {
+      screen: HomeScreen,
+    },
+    Explore: {
+      screen: MapScreen,
     },
   },
   {
@@ -17,17 +21,21 @@ export default TabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         switch (routeName) {
-          case 'Login':
-            iconName = Platform.OS === 'ios'
-              ? `ios-information-circle${focused ? '' : '-outline'}`
-              : 'md-information-circle';
+          case 'Home':
+            iconName = 'home';
+            break;
+          case 'Explore':
+            iconName = 'map';
+            break;
+          default:
+            iconName = 'link';
         }
         return (
-          <Ionicons
+          <Foundation
             name={iconName}
             size={28}
             style={{ marginBottom: -3 }}
-            color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+            color={focused ? 'darkgray': 'lightgray'}
           />
         );
       },
