@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
+  TouchableOpacity,
   View,
   Dimensions
 } from 'react-native';
@@ -93,7 +94,7 @@ export default class MapScreen extends React.Component {
                   <View style={{justifyContent: 'space-around', alignContent: 'space-around'}}>
                       <Button large raised title="See full profile" backgroundColor="#aaac96" borderRadius={10} onPress={() => this.renderProfile()}/>
                   </View>
-                  <Button onPress={() => this.setState({isOpen: false})} backgroundColor="#aaac96" title="X" />
+                  <TouchableOpacity onPress={() => this.setState({isOpen: false})}><Text>close</Text></TouchableOpacity>
               </Modal>
             </View>
         )
