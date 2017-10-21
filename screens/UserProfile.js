@@ -24,11 +24,7 @@ export default class PerformerProfile extends React.Component {
       render(){
           return (
             <View style={styles.container}>
-
               <ProfileHeader />
-              <PayButton />
-              <FollowButton />
-
             </View>
           );
       }
@@ -50,31 +46,6 @@ class ProfileHeader extends React.Component {
           );
       }
   }
-
-
-  class PayButton extends React.Component {
-    render(){
-      return (
-        <TouchableOpacity style={[styles.button, styles.buttonGreen]} >
-          <Text style={styles.supportButtonLabel}>$ SUPPORT $</Text>
-        </TouchableOpacity>
-      );
-    }
-  }
-
-
-
-class FollowButton extends React.Component {
-  render(){
-    return (
-      <TouchableOpacity style={[styles.button, styles.buttonBlue]} >
-        <Text style={styles.followButtonLabel}>FOLLOW</Text>
-      </TouchableOpacity>
-    );
-  }
-}
-
-
 
 
 

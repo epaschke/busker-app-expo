@@ -34,7 +34,7 @@ const Buskers = [{
   handle: "@VincentD",
   bio: "My fine arts degree has served me fine, thank you.",
   act: "caricatures",
-  active: false, // false or an object
+  active: {latitude: 37.767532, longitude: -122.419958},
   following: [],
   history: [{from: 'Sandy M.', amount: 15}, {from: 'Claire T.', amount: 10}, {from: 'Jeff', amount: 4}],
 },
@@ -64,7 +64,7 @@ const Buskers = [{
   handle: "@SilverSon",
   bio: "Yo, listen up, here's a story. About a little guy that lived in a silver world...",
   act: "miming",
-  active: false,
+  active: {latitude: 37.771255, longitude: -122.420258},
   following: [],
   history: []
 },
@@ -94,7 +94,7 @@ const Buskers = [{
   handle: "@l33thaxx0r",
   bio: "Watch me hack your private accounts in just minutes. Will shock, amaze, and also definitely not sell your data on the black market.",
   act: "pc master race",
-  active: false,
+  active: {latitude: 37.776983, longitude: -122.416937},
   following: [],
   history: []
 },
@@ -115,7 +115,7 @@ const UserProfiles = [
       name: "Sandy M",
       handle: "@SandyM-532z5",
       location: "San Francisco",
-      following: [Buskers[4], Buskers[2], Buskers[7]]
+      following: [Buskers[4], Buskers[2], Buskers[7], Buskers[6]]
     },
     {
       photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",

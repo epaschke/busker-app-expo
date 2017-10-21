@@ -7,9 +7,7 @@ import {
   View,
   StyleSheet
 } from 'react-native';
-
-// a dummy user
-var user = {name: "Bianca Morris", atName: "@Bianca-Morris", picUrl: 'https://s25.postimg.org/4hr298rgf/squarish.jpg'}
+import { Foundation } from '@expo/vector-icons';
 
 export default class PaymentScreen extends React.Component {
   constructor(props){
@@ -30,10 +28,10 @@ export default class PaymentScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={{uri: user.picUrl}}
+        <Image source={{uri: this.props.navigation.state.params.user.photo}}
        style={{width: 150, height: 150, borderColor: 'black', borderRadius: 80}} />
         <Text style={styles.paragraph}>
-         Send a tip{ this.state.tipAmount ? ' of $' + this.state.tipAmount + ' USD ' : ' '}to {user.atName}:
+         Send a tip{ this.state.tipAmount ? ' of $' + this.state.tipAmount + ' USD ' : ' '}to {this.props.navigation.state.params.user.handle}:
         </Text>
         <TextInput style={styles.inputBox} onChangeText={(tip) => {
           if (this.validateTipAmount(tip)){
@@ -44,7 +42,11 @@ export default class PaymentScreen extends React.Component {
         <TextInput style={styles.inputBox} onChangeText={(text) => this.setState({forWhat: text})} value={this.state.forWhat}>
         </TextInput>
         <TouchableOpacity style={{backgroundColor: 'grey', marginTop: 10, marginBottom: 10}}>
-          <Text style={{color:'white', padding: 10, width: 300, textAlign: 'center' }}>Finish @ Paypal</Text>
+          <Text style={{color:'white', padding: 10, width: 300, textAlign: 'center' }}>Pay with <Foundation
+            size={20}
+            name="paypal"
+            color="white"
+        />aypal</Text>
         </TouchableOpacity>
         <Text>
         {this.state.tipAmount ? 'Approx Total: USD $' + (parseInt(this.state.tipAmount) + (this.state.tipAmount * .029 + .30)) : " " }

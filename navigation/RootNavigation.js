@@ -3,6 +3,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import MainTabNavigator from './MainTabNavigator';
 import ArtistProfile from '../screens/ArtistProfile';
+import PaymentScreen from '../screens/PaymentScreen';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -11,7 +12,10 @@ const RootStackNavigator = StackNavigator(
     },
     Profile1: {
         screen: ArtistProfile,
-    }
+    },
+    PaymentScreen: {
+        screen: PaymentScreen,
+    },
   },
   {
     navigationOptions: () => ({

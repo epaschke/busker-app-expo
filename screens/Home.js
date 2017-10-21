@@ -10,7 +10,9 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { PayButton } from '../components/PayButton';
-import { ViewBuskersHorizontal } from '../components/ViewBuskersHorizontal';
+
+import { Buskers } from '../dummydata';
+import { UserProfiles } from '../dummydata';
 
 export default class Home extends React.Component {
     static navigationOptions = {
@@ -21,12 +23,39 @@ export default class Home extends React.Component {
         return (
             <View style={styles.container}>
               <ScrollView>
-                <Text style={styles.headingText}>Followed</Text>
-                <ViewBuskersHorizontal />
-                <Text style={styles.headingText}>Nearby</Text>
-                <ViewBuskersHorizontal />
-                <Text style={styles.headingText}>Featured</Text>
-                <ViewBuskersHorizontal />
+                <Text style={styles.headingText}>FOLLOWING</Text>
+                <ScrollView horizontal={true} decelerationRate={0} snapToInterval={200}
+                snapToAlignment={"center"}>
+                {UserProfiles[0].following.map((busker, id) =>
+                  <TouchableOpacity key={id + 'following'} style={{justifyContent: 'center', flex: 1}} onPress={() => this.props.navigation.navigate('Profile1', {user: busker})}>
+                  <Image style={styles.image}
+                  source={{uri: busker.photo}} />
+                  <Text style={{textAlign: 'center', fontSize: 12}}>{busker.handle}</Text>
+                  <Text style={{textAlign: 'center', fontSize: 12}}>{busker.act}</Text>
+              </TouchableOpacity>)}
+                </ScrollView>
+                <Text style={styles.headingText}>NEARBY</Text>
+                <ScrollView horizontal={true} decelerationRate={0} snapToInterval={200}
+                snapToAlignment={"center"}>
+                {Buskers.filter((busker) => busker.active).map((busker, id) =>
+                  <TouchableOpacity key={id + 'nearby'} style={{justifyContent: 'center', flex: 1}} onPress={() => this.props.navigation.navigate('Profile1', {user: busker})}>
+                  <Image style={styles.image}
+                  source={{uri: busker.photo}} />
+                  <Text style={{textAlign: 'center', fontSize: 12}}>{busker.handle}</Text>
+                  <Text style={{textAlign: 'center', fontSize: 12}}>{busker.act}</Text>
+              </TouchableOpacity>)}
+                </ScrollView>
+                <Text style={styles.headingText}>FEATURED</Text>
+                <ScrollView horizontal={true} decelerationRate={0} snapToInterval={200}
+                snapToAlignment={"center"}>
+                {Buskers.filter((busker) => busker.photo !== "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png").map((busker, id) =>
+                  <TouchableOpacity key={id + 'featured'} style={{justifyContent: 'center', flex: 1}} onPress={() => this.props.navigation.navigate('Profile1', {user: busker})}>
+                  <Image style={styles.image}
+                  source={{uri: busker.photo}} />
+                  <Text style={{textAlign: 'center', fontSize: 12}}>{busker.handle}</Text>
+                  <Text style={{textAlign: 'center', fontSize: 12}}>{busker.act}</Text>
+                </TouchableOpacity>)}
+                </ScrollView>
               </ScrollView>
             </View>
         )
@@ -39,8 +68,7 @@ const styles = StyleSheet.create({
   backgroundColor: '#fff'
 },
 headingText: {
-  textAlign: 'center',
-  alignItems: 'center',
+  marginLeft: 10,
   justifyContent: 'center',
   marginTop: 10,
   marginBottom: 0,

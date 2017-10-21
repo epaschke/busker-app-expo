@@ -10,6 +10,7 @@ import {
   Button,
   Dimensions
 } from 'react-native';
+import { Foundation } from '@expo/vector-icons';
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -23,7 +24,7 @@ export default class PerformerProfile extends React.Component {
             <View style={styles.container}>
 
               <ProfileHeader person={this.props.navigation.state.params.user}/>
-              <PayButton />
+              <PayButton handleClick={() => this.props.navigation.navigate('PaymentScreen', {user: this.props.navigation.state.params.user})}/>
               <FollowButton />
 
             </View>
@@ -38,11 +39,14 @@ class ProfileHeader extends React.Component {
               <View style={styles.profilepicWrap}>
                 <Image style={styles.profilepic} source={{uri: this.props.person.photo}} />
               </View>
-              <Text style={styles.name}>{this.props.person.name}</Text>
+              <Text style={styles.name}>{this.props.person.name}  <Foundation
+                  name="record"
+                  size={28}
+                  style={{ marginBottom: -3 }}
+                  color={this.props.person.active ? 'lightgreen': 'red'}/></Text>
               <Text style={styles.handle}>{this.props.person.handle}</Text>
               <Text style={styles.descriptor}>{this.props.person.act}</Text>
               <Text style={styles.bio}>{this.props.person.bio}</Text>
-
             </View>
           );
       }
@@ -52,7 +56,7 @@ class ProfileHeader extends React.Component {
   class PayButton extends React.Component {
     render(){
       return (
-        <TouchableOpacity style={[styles.button, styles.buttonGreen]} >
+        <TouchableOpacity style={[styles.button, styles.buttonGreen]} onPress={() => this.props.handleClick()} >
           <Text style={styles.supportButtonLabel}>$ SUPPORT $</Text>
         </TouchableOpacity>
       );
@@ -62,10 +66,16 @@ class ProfileHeader extends React.Component {
 
 
 class FollowButton extends React.Component {
+    constructor(){
+        super()
+            this.state = {
+                following: false,
+            }
+    }
   render(){
     return (
-      <TouchableOpacity style={[styles.button, styles.buttonBlue]} >
-        <Text style={styles.followButtonLabel}>FOLLOW</Text>
+      <TouchableOpacity style={[styles.button, styles.buttonBlue]} onPress={() => this.setState({ following: !this.state.following})}>
+        <Text style={styles.followButtonLabel}>{this.state.following ? 'UNFOLLOW' : 'FOLLOW'}</Text>
       </TouchableOpacity>
     );
   }
@@ -111,6 +121,7 @@ class FollowButton extends React.Component {
       fontSize: 32,
       color: '#c74b16',
       fontWeight: 'bold',
+      textAlign: 'center'
     //   fontFamily: 'Cochin',
     },
     handle: {
