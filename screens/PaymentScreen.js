@@ -24,6 +24,28 @@ export default class PaymentScreen extends React.Component {
     }
     return tipValid;
   }
+  spawnPaypalAlert1(){
+    Alert.alert(
+      'Paypal Validation',
+      'Are you sure you would like to pay '+ this.props.navigation.state.params.user.handle + ' $' + this.state.tipAmount + ' USD?',
+      [
+        {text: 'Yes', onPress: () => this.spawnPaypalAlert2()},
+        {text: 'Cancel', onPress: () => console.log("Paypal payment aborted."), style: 'cancel'},
+      ],
+      { cancelable: true }
+    )
+  }
+
+  spawnPaypalAlert2(){
+    Alert.alert(
+      'Success!',
+      'Your payment to ' + this.props.navigation.state.params.user.handle + ' went through!',
+      [
+        {text: 'Okay!', onPress: () => this.props.navigation.navigate('Main')},
+      ],
+      { cancelable: false }
+    )
+  }
 
   render() {
     return (
@@ -41,7 +63,7 @@ export default class PaymentScreen extends React.Component {
         </TextInput>
         <TextInput style={styles.inputBox} onChangeText={(text) => this.setState({forWhat: text})} value={this.state.forWhat}>
         </TextInput>
-        <TouchableOpacity style={{backgroundColor: 'grey', marginTop: 10, marginBottom: 10}}>
+        <TouchableOpacity style={{backgroundColor: 'grey', marginTop: 10, marginBottom: 10}} onClick={() => this.spawnPaypalAlert1()}>
           <Text style={{color:'white', padding: 10, width: 300, textAlign: 'center' }}>Pay with <Foundation
             size={20}
             name="paypal"
