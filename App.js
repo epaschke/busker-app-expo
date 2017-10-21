@@ -7,7 +7,8 @@ import { StackNavigator } from 'react-navigation';
 
 const Navigator = StackNavigator({
     Login: {screen: LoginScreen},
-    Map: {screen: MapScreen}
+    Map: {screen: MapScreen},
+    Home: {screen: Home}
 }, {
     initialRouteName: 'Login'
 })
