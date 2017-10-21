@@ -25,9 +25,6 @@ export default class Home extends React.Component {
               <View style={{alignItems: 'center'}}>
                 <Text style={styles.headingText}>Followed</Text>
               </View>
-              {/* <View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-start'}}> */}
-              <Text style={styles.headingText}>Followed</Text>
-            {/* <View style={{flex: 1, flexDirection: 'column', alignItems: 'flex-start'}}> */}
             <ScrollView>
               <ScrollView horizontal={true}
                 decelerationRate={0}
@@ -35,25 +32,25 @@ export default class Home extends React.Component {
                 snapToAlignment={"center"}>
                 <View style={{justifyContent: 'center'}}>
                   <Image style={styles.image}
-                  source={require('./img/Kamikaze-Fireflies-3.jpg')} />
+                  source={require('../img/Kamikaze-Fireflies-3.jpg')} />
                   <Text style={{paddingTop: 7, paddingLeft: 34, fontSize: 12}}>@StreetPerformer1</Text>
                   <Text style={{paddingLeft: 15, fontSize: 12}}>Circus Art, Flame Thrower</Text>
                 </View>
                 <View style={{justifyContent: 'center'}}>
                   <Image style={styles.image}
-                  source={require('./img/breakfree.jpg')} />
+                  source={require('../img/breakfree.jpg')} />
                   <Text style={{paddingTop: 7, paddingLeft: 34, fontSize: 12}}>@BreakFreeHipHop</Text>
                   <Text style={{marginLeft: 30, fontSize: 12}}>Dance, Hip Hop</Text>
                 </View>
                 <View style={{justifyContent: 'center'}}>
                   <Image style={styles.image}
-                  source={require('./img/breakfree.jpg')} />
+                  source={require('../img/breakfree.jpg')} />
                   <Text style={{paddingTop: 7, paddingLeft: 34, fontSize: 12}}>@BreakFreeHipHop</Text>
                   <Text style={{marginLeft: 30, fontSize: 12}}>Dance, Hip Hop</Text>
                 </View>
                 <View style={{justifyContent: 'center'}}>
                   <Image style={styles.image}
-                  source={require('./img/breakfree.jpg')} />
+                  source={require('../img/breakfree.jpg')} />
                   <Text style={{paddingTop: 7, paddingLeft: 34, fontSize: 12}}>@BreakFreeHipHop</Text>
                   <Text style={{marginLeft: 30, fontSize: 12}}>Dance, Hip Hop</Text>
                 </View>
@@ -65,13 +62,13 @@ export default class Home extends React.Component {
                 snapToAlignment={"center"}>
                 <View style={{justifyContent: 'center'}}>
                   <Image style={styles.image}
-                  source={require('./img/Kamikaze-Fireflies-3.jpg')} />
+                  source={require('../img/Kamikaze-Fireflies-3.jpg')} />
                   <Text style={{paddingTop: 7, paddingLeft: 34, fontSize: 12}}>@StreetPerformer1</Text>
                   <Text style={{paddingLeft: 15, fontSize: 12}}>Circus Art, Flame Thrower</Text>
                 </View>
                 <View style={{justifyContent: 'center'}}>
                   <Image style={styles.image}
-                  source={require('./img/breakfree.jpg')} />
+                  source={require('../img/breakfree.jpg')} />
                   <Text style={{paddingTop: 7, paddingLeft: 34, fontSize: 12}}>@BreakFreeHipHop</Text>
                   <Text style={{marginLeft: 30, fontSize: 12}}>Dance, Hip Hop</Text>
                 </View>
@@ -83,13 +80,13 @@ export default class Home extends React.Component {
                 snapToAlignment={"center"}>
                 <View style={{justifyContent: 'center'}}>
                   <Image style={styles.image}
-                  source={require('./img/Kamikaze-Fireflies-3.jpg')} />
+                  source={require('../img/Kamikaze-Fireflies-3.jpg')} />
                   <Text style={{paddingTop: 7, paddingLeft: 34, fontSize: 12}}>@StreetPerformer1</Text>
                   <Text style={{paddingLeft: 15, fontSize: 12}}>Circus Art, Flame Thrower</Text>
                 </View>
                 <View style={{justifyContent: 'center'}}>
                   <Image style={styles.image}
-                  source={require('./img/breakfree.jpg')} />
+                  source={require('../img/breakfree.jpg')} />
                   <Text style={{paddingTop: 7, paddingLeft: 34, fontSize: 12}}>@BreakFreeHipHop</Text>
                   <Text style={{marginLeft: 30, fontSize: 12}}>Dance, Hip Hop</Text>
                 </View>
@@ -104,8 +101,7 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
   flex: 1,
-  backgroundColor: '#fff',
-  paddingTop: Constants.statusBarHeight
+  backgroundColor: '#fff'
 },
 headingText: {
   textAlign: 'center',
@@ -114,8 +110,7 @@ headingText: {
   marginTop: 10,
   marginBottom: 0,
   fontWeight: 'bold',
-  fontSize: 20,
-  fontFamily: 'Helvetica Neue',
+  fontSize: 20
 },
 image: {
   width: 150,
