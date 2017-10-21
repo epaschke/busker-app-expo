@@ -3,12 +3,11 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
-import LoginScreen from '../screens/LoginScreen';
 
 const RootStackNavigator = StackNavigator(
   {
     Main: {
-      screen: LoginScreen,
+      screen: MainTabNavigator,
     },
   },
   {
