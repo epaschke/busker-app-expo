@@ -10,6 +10,9 @@ import {
   Button,
   Dimensions
 } from 'react-native';
+import { WebBrowser } from 'expo';
+import MainTabNavigator from '../navigation/MainTabNavigator';
+import { Buskers } from '../dummydata';
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -22,7 +25,7 @@ export default class PerformerProfile extends React.Component {
           return (
             <View style={styles.container}>
 
-              <ProfileHeader person={this.props.navigation.state.params.user}/>
+              <ProfileHeader />
               <PayButton />
               <FollowButton />
 
@@ -36,12 +39,12 @@ class ProfileHeader extends React.Component {
           return (
             <View style={styles.header}>
               <View style={styles.profilepicWrap}>
-                <Image style={styles.profilepic} source={{uri: this.props.person.photo}} />
+                <Image style={styles.profilepic} source={require('../img/beyoncepic.jpeg')} />
               </View>
-              <Text style={styles.name}>{this.props.person.name}</Text>
-              <Text style={styles.handle}>{this.props.person.handle}</Text>
-              <Text style={styles.descriptor}>{this.props.person.act}</Text>
-              <Text style={styles.bio}>{this.props.person.bio}</Text>
+              <Text style={styles.name}>Beyoncé</Text>
+              <Text style={styles.handle}> @beyoncé </Text>
+              <Text style={styles.descriptor}> Singer / Entertainer </Text>
+              <Text style={styles.bio}>Beyoncé is an icon of the 21st century. Pay her.</Text>
 
             </View>
           );

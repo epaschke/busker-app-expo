@@ -6,7 +6,7 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 import HomeScreen from '../screens/Home';
 import MapScreen from '../screens/MapScreen';
 import PickPaymentScreen from '../screens/PickPaymentScreen';
-import ArtistProfile from '../screens/ArtistProfile';
+import UserProfile from '../screens/UserProfile';
 
 export default TabNavigator(
   {
@@ -17,7 +17,7 @@ export default TabNavigator(
       screen: MapScreen,
   },
     Profile: {
-        screen: ArtistProfile,
+        screen: UserProfile,
     },
     Support: {
       screen: PickPaymentScreen,
@@ -37,6 +37,9 @@ export default TabNavigator(
             break;
           case 'Support':
             iconName = 'dollar-bill';
+            break;
+          case 'Profile':
+            iconName = 'torso';
             break;
           default:
             iconName = 'link';

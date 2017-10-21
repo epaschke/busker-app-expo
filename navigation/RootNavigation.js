@@ -2,7 +2,7 @@ import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import MainTabNavigator from './MainTabNavigator';
-import AttemptComponent from '../components/AttemptComponent';
+import ArtistProfile from '../screens/ArtistProfile';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -10,7 +10,7 @@ const RootStackNavigator = StackNavigator(
       screen: MainTabNavigator,
     },
     Profile1: {
-        screen: AttemptComponent,
+        screen: ArtistProfile,
     }
   },
   {
