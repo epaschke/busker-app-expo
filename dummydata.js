@@ -4,7 +4,7 @@ const Buskers = [{
   handle: "@Billy-Bob",
   bio: "I like 3 things: banjos, my harmonica, and THE BIG CITY, BABY.",
   act: "one-man band",
-  active: {latitude: "3.4992731029", longitude: "-9.3332221119"}, // false or an object
+  active: {latitude: 37.779947, longitude: -122.403006}, // false or an object
   following: [],
   history: [{from: 'Kansas A.', amount: 2}, {from: 'Anna B.', amount: 4}],
 },
@@ -14,7 +14,7 @@ const Buskers = [{
   handle: "@LHaleMusicBB<3",
   bio: "Classically trained violinist with indie flair and a hipster attitude. NOT LINDSAY STERLING.",
   act: "violinist",
-  active: {latitude: "3.4992731029", longitude: "-9.3332221119"}, // false or an object
+  active: {latitude: 37.777441, longitude: -122.409919}, // false or an object
   following: [],
   history: [],
 },
@@ -24,7 +24,7 @@ const Buskers = [{
   handle: "@GiggityGiggles",
   bio: "Grumpy goobers gather galactic gallons of giggles at my grand street-side galas!",
   act: "clownin' around",
-  active: {latitude: "3.4992731029", longitude: "-9.3332221119"}, // false or an object
+  active: {latitude: 37.783968, longitude: -122.41422}, // false or an object
   following: [],
   history: [],
 },
@@ -35,7 +35,7 @@ const Buskers = [{
   bio: "My fine arts degree has served me fine, thank you.",
   act: "caricatures",
   active: false, // false or an object
-  following: []],
+  following: [],
   history: [{from: 'Sandy M.', amount: 15}, {from: 'Claire T.', amount: 10}, {from: 'Jeff', amount: 4}],
 },
 {
@@ -107,21 +107,20 @@ const Buskers = [{
   active: false,
   following: [],
   history: []
-}
-}];
+  }];
 
 const UserProfiles = [
     {
       photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",
       name: "Sandy M",
-      handle: "@SandyM-532z5"
+      handle: "@SandyM-532z5",
       location: "San Francisco",
       following: [Buskers[4], Buskers[2], Buskers[7]]
     },
     {
       photo: "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_960_720.png",
       name: "Bianca M",
-      handle: "@BiancaM-342il"
+      handle: "@BiancaM-342il",
       location: "San Francisco",
       following: [Buskers[0], Buskers[1], Buskers[11]]
     },

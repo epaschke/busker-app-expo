@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import MainTabNavigator from '../navigation/MainTabNavigator';
+import { Buskers } from '../dummydata';
 
 export default class PerformerProfile extends React.Component {
     static navigationOptions = {
