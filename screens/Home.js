@@ -9,10 +9,14 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import { PayButton } from '../components/PayButton'
 
 export default class Home extends React.Component {
     static navigationOptions = {
-      header: null,
+        headerStyle: {
+            backgroundColor: 'transparent',
+            },
+        headerRight: <PayButton />
     };
 
     render(){
@@ -58,7 +62,6 @@ const styles = StyleSheet.create({
     marginTop: 40,
     fontWeight: 'bold',
     fontSize: 20,
-    fontFamily: 'Helvetica Neue',
   },
   image: {
     width: 150,
