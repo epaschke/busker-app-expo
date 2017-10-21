@@ -44,6 +44,13 @@ export default class MapScreen extends React.Component {
        })
    }
 
+   renderProfile(){
+       this.setState({
+           isOpen: false
+       })
+       this.props.navigation.navigate('Profile1', {user: this.state.currentUser});
+   }
+
     render(){
         return (
             <View style={{
@@ -84,7 +91,7 @@ export default class MapScreen extends React.Component {
                   <Text>{this.state.currentUser.act}</Text>
                   <Image style={{height: height * .2, width: width * .4}} source={{uri: this.state.currentUser.photo}}/>
                   <View style={{justifyContent: 'space-around', alignContent: 'space-around'}}>
-                      <Button large raised title="See full profile" backgroundColor="#aaac96" borderRadius={10} onPress={() => this.props.navigation.navigate('Profile1')}/>
+                      <Button large raised title="See full profile" backgroundColor="#aaac96" borderRadius={10} onPress={() => this.renderProfile()}/>
                   </View>
                   <Button onPress={() => this.setState({isOpen: false})} backgroundColor="#aaac96" title="X" />
               </Modal>
